@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5e3759f5-54b0-4cf7-a8c7-658a73a6bd42" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-678406432">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="txt" value="50" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="50" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-12" />
+    <option name="y" value="-12" />
+    <option name="width" value="1944" />
+    <option name="height" value="1104" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="JohnHHunter.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JohnHHunter.github.io" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../machine_learning" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\John Hunter\Desktop\Fall 2020\ML\JohnHHunter.github.io" />
+    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/LICENSE.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/PAR.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/README.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/css/fontawesome-all.min.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/css/main.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/css/noscript.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/js/breakpoints.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/js/browser.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/js/jquery.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/js/main.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/js/util.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/base/_page.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/base/_reset.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/base/_typography.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/components/_actions.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/components/_box.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/components/_button.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/components/_form.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/components/_icon.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/components/_icons.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/components/_image.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/components/_list.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/components/_row.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/components/_section.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/components/_table.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/components/_tiles.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/layout/_footer.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/layout/_header.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/layout/_main.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/layout/_menu.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/layout/_wrapper.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/libs/_breakpoints.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/libs/_functions.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/libs/_html-grid.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/libs/_mixins.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/libs/_vars.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/libs/_vendor.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/main.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/sass/noscript.scss</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/webfonts/fa-brands-400.eot</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/webfonts/fa-brands-400.svg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/webfonts/fa-brands-400.ttf</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/webfonts/fa-brands-400.woff</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/webfonts/fa-brands-400.woff2</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/webfonts/fa-regular-400.eot</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/webfonts/fa-regular-400.svg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/webfonts/fa-regular-400.ttf</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/webfonts/fa-regular-400.woff</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/webfonts/fa-regular-400.woff2</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/webfonts/fa-solid-900.eot</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/webfonts/fa-solid-900.svg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/webfonts/fa-solid-900.ttf</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/webfonts/fa-solid-900.woff</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/assets/webfonts/fa-solid-900.woff2</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/elements.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/generic.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/Cornell-logo.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/ParLogo.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/favicon_io/android-chrome-192x192.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/favicon_io/android-chrome-512x512.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/favicon_io/apple-touch-icon.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/favicon_io/favicon-16x16.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/favicon_io/favicon-32x32.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/favicon_io/favicon.ico</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/favicon_io/site.webmanifest</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/linkedinlogo/android-chrome-192x192.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/linkedinlogo/android-chrome-512x512.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/linkedinlogo/apple-touch-icon.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/linkedinlogo/favicon-16x16.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/linkedinlogo/favicon-32x32.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/linkedinlogo/favicon.ico</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/linkedinlogo/site.webmanifest</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/logo.svg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/pic01.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/pic02.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/pic03.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/pic04.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/pic05.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/pic06.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/pic07.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/pic08.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/pic09.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/pic10.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/pic11.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/pic12.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/pic13.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/pic14.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/images/pic15.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/dist/index.html</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e3759f5-54b0-4cf7-a8c7-658a73a6bd42" name="Default Changelist" comment="" />
+      <created>1605897392949</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605897392949</updated>
+    </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1605897463839</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605897463839</updated>
+    </task>
+    <task id="LOCAL-00002" summary="moved everything into root folder">
+      <created>1609352743909</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609352743909</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2574899" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32890365" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <MESSAGE value="moved everything into root folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved everything into root folder" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/PAR.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1296" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="193" column="12" lean-forward="true" selection-start-line="193" selection-start-column="12" selection-end-line="193" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

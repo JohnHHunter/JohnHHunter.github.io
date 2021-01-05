@@ -163,6 +163,7 @@ input, select, textarea {
 	}
 
 	p {
+		font-size: larger;
 		margin: 0 0 2em 0;
 	}
 
@@ -1880,6 +1881,7 @@ input, select, textarea {
 		list-style: disc;
 		margin: 0 0 2em 0;
 		padding-left: 1em;
+		font-size: large;
 	}
 
 		ul li {

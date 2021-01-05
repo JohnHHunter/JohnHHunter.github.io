@@ -61,10 +61,26 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Generic Page</h1>
+							<h1>Wikipedia Scraper</h1>
 							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
+							<p><span class="image right"><img src="images/rhcpWikipedia.jpg" alt="" style="width: 250px;"/></span>One of the main functions of Localify.org is to recommend artists that are in a users local area. To do this, we need to know an artists origin to make an <b>artist to city relationship</b> within our database. One of the best sources for an artist origin is Wikipedia. As seen with the Red Hot Chili Pepper's Wikipedia page, their origin is listed on the sidebar. One of my main contributions to the Localify project was creating a Wikipedia scraper that would try to find the origin of each artists in our database.</p>
+							<ul>In order to accomplish this, I created a python script. Here is a outline of how the script works:
+								<li>Make a list of all artists in our database that have not been searched on wikipedia</li>
+								<li>For each artist</li>
+								<ul>
+									<li>Find the corresponding wikipedia page</li>
+									<li>Try to access wikipedia.org/artist_name</li>
+									<li>Confirm that the wikipedia page is for a musician (search for keywords Ex: "discography")</li>
+									<li>If not found, try again by adding extensions (Ex: " (band)") to the wikipedia url</li></ul>
+								<li> Search the wikipedia page for information about origin or birthplace</li>
+								<ul><li>This was done using Python package Beautiful Soup</li></ul>
+								<li>If origin/birthplace is found, find the corresponding city in our database</li>
+								<li>Create a relation between artist and city in our database</li>
+								Want to see the python code behind this? Check it out! The scraper begins with the run(self) function.
+								Now that our database has more connections between artists and locations, our system can recommend
+								more local artists to our users!
+								</ul>
+							</ul>
 							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
 						</div>
 					</div>
@@ -92,7 +108,7 @@
 							</form>
 						</section>
 						<section>
-							<h2>Connect</h2>
+							<h2>Content</h2>
 							<ul class="icons">
 								<li><a href="https://www.linkedin.com/in/john-hunter-376343160/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
 								<li><a href="https://github.com/JohnHHunter" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>

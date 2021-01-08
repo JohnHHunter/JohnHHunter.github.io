@@ -62,10 +62,48 @@
 					<div id="main">
 						<div class="inner">
 							<h1>AI Music Maker</h1>
-							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							<span class="image right"><img src="images/robotMusician.jpg" alt="" /></span>
+							<p>It was time to make proposals for our <i>Intelligent Systems</i> final project. I immediately started looking for ways I could create an intelligent music generator agent. The first task to address was what environment an agent could create music in. After a quick google, I found an <a href="https://onlinesequencer.net/">online music sequencer</a> that would work perfectly. The agent could create its music internally, and then print out a text file that could be loaded into the sequencer, allowing us humans to listen to it. </p>
+							<p>Many of my classmates were interested in this project, so 3 classmates and I could approch this project from many different angles. Programming in Java, we begun with an agent inteface:</p>
+							<pre><code>public interface AgentIF {
+    //make music generates the music, and then returns toString()
+    String makeMusic(int number_of_bars) throws Exception;
+}</code></pre>
+							<p>With this interface, we could implement our agent in many different ways. To get started, we all created our own random agents. Here is a musical sample that my random agent produced:
+							<figure>
+								<figcaption>The Random Agent:</figcaption>
+								<audio
+									controls
+									src="/media/randomAgent.mp3">
+										Your browser does not support the
+										<code>audio</code> element.
+								</audio>
+							</figure>
+							</p>
+							<p>Pretty terrible right? Let's see how a more intelligent agent compares. This basic agent has an understanding of chords, keys and rhythm. Check it out!
+							<figure>
+								<figcaption>The Basic Agent:</figcaption>
+								<audio
+									controls
+									src="/media/basicAgent.mp3">
+										Your browser does not support the
+										<code>audio</code> element.
+								</audio>
+							</figure>
+							</p>
+							<p>Not bad eh? The basic agent can generate music that is rhythmic and diatonic. It is pleasing to the ears, but could fall into the genre of "elevator music". We wanted to go one step further. For our advanced agent, we implemented an understanding of syncopation. Check out this music sample it produced:
+							<figure>
+								<figcaption>The Advanced Agent:</figcaption>
+								<audio
+									controls
+									src="/media/advancedAgent.mp3">
+										Your browser does not support the
+										<code>audio</code> element.
+								</audio>
+							</figure>
+							</p>
+							<p>While I am happy with the output of these agents, it has only opened my eyes to the endless possibilities. In the future, I would love to see an agent that can produce multiple musical sequences, and transition between them smoothly. Also, I would love to make an agent that can interpret an underlying chord progression, and intelligently "solo" over it. However, due to my own limited understanding of music theory, I am not sure how to approch this problem. Before I can teach an agent how to improvise, I ought to practice improvisation myself!</p>
+							<p>Check out the <a href="https://github.com/timothymarotta/aimusicmaker" target="_blank" rel="noopener noreferrer">Github Repository</a> to learn more and explore the many agents we created!</p>
 						</div>
 					</div>
 

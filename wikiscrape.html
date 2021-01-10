@@ -63,22 +63,32 @@
 						<div class="inner">
 							<h1>Wikipedia Scraper</h1>
 							<span class="image main"><img src="images/wikiAndLocalify.jpg" alt="" /></span>
-							<p><span class="image right"><img src="images/rhcpWikipedia.jpg" alt="" style="width: 250px;"/></span>One of the main functions of Localify.org is to recommend artists that are in a users local area. To do this, we need to know an artists origin to make an <b>artist to city relationship</b> within our database. One of the best sources for an artist origin is Wikipedia. As seen with the Red Hot Chili Pepper's Wikipedia page, their origin is listed on the sidebar. One of my main contributions to the Localify project was creating a Wikipedia scraper that would try to find the origin of each artists in our database.</p>
-							<ul>In order to accomplish this, I created a python script. Here is an <b>outline of</b> how the script works:
-								<li>Make a list of all artists in our database that have not been searched on wikipedia</li>
+							<p>When a new band catches my attention, I have always had a tendency to wonder where they came from. It can be a nice frame of reference that explains why the music came out the way it did. Did Kurt’s rainy Seattle neighborhood enable him to create such expressive music? Could Bruce have sung about his home state if it was anywhere else but New Jersey? What would the Red Hot Chili Peppers be singing about if they weren't from California? These are the questions that come to mind when I am listening.</p>
+							<p>When I first approached Localify.org, I loved that you could explore the local artists of any town in America. However, they only had about 6000 artists to city connections at the time. Their main source of information was BandsInTown, which was limited, unconfirmed and rife with spelling errors. So, the first project I started on was finding a better source of information so we could expand the database and therefore the usefulness of the site. And we all know the greatest source of information on the internet... Wikipedia!</p>
+							<span class="image right"><img src="images/rhcpWikipedia.jpg" alt="" style="width: 250px;"/></span>
+							<p>As I looked through artist's wikipedia pages, I found that most of them had their origin listed in their side bar. Perfect! All I had to do was write a script that could capture this information for every artist in our database. Here is an outline of how the script works:</p>
+							<ul>
+								<li>Assemble a list of all the artists in our database that have not been searched on wikipedia</li>
 								<li>For each artist</li>
-								<ul><li>Find the corresponding wikipedia page</li>
-									<li>Try to access wikipedia.org/artist_name</li>
-									<li>Confirm that the wikipedia page is for a musician (search for keywords Ex: "discography")</li>
-									<li>If not found, try again by adding extensions (Ex: " (band)") to the wikipedia url</li></ul>
-								<li> Search the wikipedia page for information about origin or birthplace</li>
-								<ul><li>This was done using Python package Beautiful Soup</li></ul>
-								<li>If origin/birthplace is found, find the corresponding city in our database</li>
-								<li>Create a relation between artist and city in our database</li>
-								Want to see the python code behind this? Check it out! The scraper begins with the run(self) function.
-								Now that our database has more connections between artists and locations, our system can recommend
-								more local artists to our users!</ul></ul>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+								<ul>
+									<li>Find the corresponding wikipedia page</li>
+									<ul>
+										<li>Try to access wikipedia.org/artist_name</li>
+										<li>Confirm that the wikipedia page is for a musician (search for keywords Ex: "discography")</li>
+										<li>If not found, try again by adding extensions (Ex: " (band)") to the wikipedia url</li>
+									</ul>
+									<li style="margin-top:-30px;"> Search the wikipedia page for information about origin or birthplace</li>
+									<ul><li>This was done using Python package Beautiful Soup</li></ul>
+									<li style="margin-top:-30px;">If origin/birthplace is found, find the corresponding city in our database</li>
+									<li>Create a relation between artist and city in our database</li>
+								</ul>
+									Want to see the python code behind this? <a href="https://raw.githubusercontent.com/JimiLab/Localify/master/app/scraper/wikipedia_scraper.py?token=AI3HK67SLRUDZPYA4I4MR2LAANZRS">Check it out!</a> The scraper begins with the run(self) function.
+									Now that our database has more connections between artists and locations, our system can recommend
+									more local artists to our users!
+								</ul>
+							</ul>
+							<p>The scraper was a success, and added ____ new artist to city connections in our database. In the future, I would hope to expand Localify's global scope. Currently we only deal with cities in North America. Expanding to the whole world would enable us to include musicians from around the world, and further improve the usefulness of this web scraper (Currently bands from outside NA are skipped over).</p>
+							<p>If you haven't checked out <a href="https://www.localify.org/" target="_blank" rel="noopener noreferrer">Localify.org</a> yet, I highly recommend you do. Feel free to check on your favorite artists, and find new artists from your local area. I hope that you enjoy exploring Localify as much as I do!</p>
 						</div>
 					</div>
 

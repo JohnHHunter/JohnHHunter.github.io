@@ -64,12 +64,12 @@
 							<h1>AI Music Maker</h1>
 							<span class="image right"><img src="images/robotMusician.jpg" alt="" /></span>
 							<p>It was time to make proposals for our <i>Intelligent Systems</i> final project. I immediately started looking for ways I could create an intelligent music generator agent. The first task to address was what environment an agent could create music in. After a quick google, I found an <a href="https://onlinesequencer.net/">online music sequencer</a> that would work perfectly. The agent could create its music internally, and then print out a text file that could be loaded into the sequencer, allowing us humans to listen to it. </p>
-							<p>Many of my classmates were interested in this project, so 3 classmates and I could approch this project from many different angles. Programming in Java, we begun with an agent inteface:</p>
+							<p>Many of my classmates were interested in this project, so a team of 3 peers and I approched this project from many different angles. Programming in Java, we begun with an agent inteface:</p>
 							<pre><code>public interface AgentIF {
     //make music generates the music, and then returns toString()
     String makeMusic(int number_of_bars) throws Exception;
 }</code></pre>
-							<p>With this interface, we could implement our agent in many different ways. To get started, we all created our own random agents. Here is a musical sample that my random agent produced:
+							<p>With this interface, we could implement our agent in many different ways, each producing a correctly formatted output. To get started, we all created our own random agents. Here is a musical sample that my random agent produced:
 							<figure>
 								<figcaption>The Random Agent:</figcaption>
 								<audio
@@ -80,7 +80,7 @@
 								</audio>
 							</figure>
 							</p>
-							<p>Pretty terrible right? Let's see how a more intelligent agent compares. This basic agent has an understanding of chords, keys and rhythm. Check it out!
+							<p>Pretty terrible, right? Let's see how a more intelligent agent compares. This basic agent has an understanding of chords, keys and rhythm. Check it out!
 							<figure>
 								<figcaption>The Basic Agent:</figcaption>
 								<audio

@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>John Hunter</title>
+		<title>John Hunter ~ Localify</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -26,37 +26,9 @@
 				<!-- Header -->
 					<header id="header">
 						<div class="inner">
-
-							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/favicon_io/android-chrome-512x512.png" alt="" /></span><span class="title">Back Home</span>
-								</a>
-
-							<!-- Nav -->
-<!-- 								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav> -->
-
 						</div>
 					</header>
 
-				<!-- Menu -->
-<!-- 					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="wikiscraper.html">Wikipedia Scraper</a></li>
-							<li><a href="quadioscraper.html">Quadio Scraper</a></li>
-							<li><a href="PAR.html">PAR: an ITS</a></li>
-							<li><a href="AImusicmaker.html">AI Music Maker</a></li>
-							<li><a href="FairnessInMusic.html">Fairness in Music Rec</a></li>
-							<li><a href="website.html">This Website</a></li>
-							<li><a href="resume.html">Resume</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-					</nav> -->
 
 				<!-- Main -->
 					<div id="main">
@@ -66,8 +38,9 @@
 							<p>When a new band catches my attention, I have always had a tendency to wonder where they came from. It can be a nice frame of reference that explains why the music came out the way it did. Did Kurt’s rainy Seattle neighborhood enable him to create such expressive music? Could Bruce have sung about his home state if it was anywhere else but New Jersey? What would the Red Hot Chili Peppers be singing about if they weren't from California? These are the questions that come to mind when I am listening.</p>
 							<p>When I first approached Localify.org, I loved that you could explore the local artists of any town in America. However, they only had about 6000 artists to city connections at the time. Their main source of information was BandsInTown, which was limited, unconfirmed and rife with spelling errors. So, the first project I started on was finding a better source of information so we could expand the database and therefore the usefulness of the site. And we all know the greatest source of information on the internet... Wikipedia!</p>
 							<!-- <span class="image right"><img src="images/rhcpWikipedia.jpg" alt="" style="width: 250px;"/></span> -->
-							<p><span class="image right fit"><img src="images/rhcpWikipedia.jpg" alt="" width="max"/></span>As I looked through artist's wikipedia pages, I found that most of them had their origin listed in their side bar. Perfect! All I had to do was write a script that could capture this information for every artist in our database. Here is an outline of how the script works:</p>
-							<p>As I looked through artist's wikipedia pages, I found that most of them had their origin listed in their side bar. Perfect! All I had to do was write a script that could capture this information for every artist in our database. Here is an outline of how the script works:</p>
+							<span class="image right fit"><img src="images/rhcpwiki.jpg" alt=""/>
+								<blockquote>The sidebar of <a href="https://en.wikipedia.org/wiki/Red_Hot_Chili_Peppers" target="_blank" rel="noopener noreferrer">RHCP's wikipedia page</a></blockquote></span>
+								<p>As I looked through artist's wikipedia pages, I found that most of them had their origin listed in their side bar. Perfect! All I had to do was write a script that could capture this information for every artist in our database. Here is an outline of how the script works:</p>
 							<ul>
 								<li>Assemble a list of all the artists in our database that have not been searched on wikipedia</li>
 								<li>For each artist</li>
@@ -75,7 +48,7 @@
 									<li>Find the corresponding wikipedia page</li>
 									<ul>
 										<li>Try to access wikipedia.org/artist_name</li>
-										<li>Confirm that the wikipedia page is for a musician (search for keywords Ex: "discography")</li>
+										<li>Confirm that the wikipedia page is for a musician (search for keywords like "discography" or "tour")</li>
 										<li>If not found, try again by adding extensions (Ex: " (band)") to the wikipedia url</li>
 									</ul>
 									<li style="margin-top:-30px;"> Search the wikipedia page for information about origin or birthplace</li>
@@ -92,6 +65,31 @@
 							<p>If you haven't checked out <a href="https://www.localify.org/" target="_blank" rel="noopener noreferrer">Localify.org</a> yet, I highly recommend you do. Feel free to check on your favorite artists, and find new artists from your local area. I hope that you enjoy exploring Localify as much as I do!</p>
 						</div>
 					</div>
+
+				<!-- Main -->
+				<div id="main">
+					<div class="inner">
+						<h1>Quadio Scraper</h1>
+						<span class="image main"><img src="images/quadioAndLocalify.jpg" alt="" /></span>
+						<p>After creating a wikipedia scraper to contribute to Localify's database, I looked for other ways I could I could improve the site. I had heard about a website called Quadio, which hosts college musicans music, to help them connect with other musicians and find an auidence. Doug Turnbull and I saw the potential all this data had for Localify. By capturing college musicians spotify accounts and their college, Localify could have a "college scene".</p>
+						<p>This webscraper was more complex than my Wikipedia Scraper. Quadio is a dynamic, single-page website that requires logging in. In order to build this scraper, I had to use Selenium, a python library.</p>
+						<span class="image right"><img src="images/Quadioscreen.JPG" alt="" />
+							<blockquote>Top chart of musicans from colleges all across the country. A perfect source of data for Localify!</blockquote>
+						</span>
+						
+						<p>blah blah blah</p>
+					</div>
+				</div>
+				
+				<!-- Header -->
+				<header id="header">
+					<div class="inner">
+						<!-- Logo -->
+							<a href="index.html" class="logo">
+								<span class="symbol"><img src="images/favicon_io/android-chrome-512x512.png" alt="" /></span><span class="title">Back Home</span>
+							</a>
+					</div>
+				</header>
 
 				<!-- Footer -->
 				<footer id="footer">
@@ -124,9 +122,9 @@
 								<li><a href="mailto: jhunter1@ithaca.edu" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
 							</ul>
 						</section>
-						<ul class="copyright">
+<!-- 						<ul class="copyright">
 							<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
+						</ul> -->
 					</div>
 				</footer>
 

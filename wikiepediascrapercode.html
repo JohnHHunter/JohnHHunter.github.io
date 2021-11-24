@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>John Hunter ~ Wikiepdia Scraper Code</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<!-- favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header">
+					<div class="inner">
+					</div>
+				</header>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Wikipedia Scraper Code</h1>
+							<p>Here's a snippet of code that I wrote for Localify.org. Essentially, it uses Selenium and BeautifulSoup to scrape the origin of a musician from Wikipedia.org.</p>
+							<p>Of course, the process of this script is not as simple as that description makes it out to be. I had to explore edge cases and make a handful of helper functions that allowed this all to run smoothly. For example, what if we wanted to check for Queen's origin? Well, going to <a href="en.wikipedia.org/wiki/Queen">en.wikipedia.org/wiki/Queen</a> would bring us to a disambiguation. In order to get to the Freddie Mercury's Queen, I added a loop that checks for "<a href="https://en.wikipedia.org/wiki/Queen_(band)">/Queen (band)</a>" and a function that searches the page for keywords to confirm that the webpage is about the artist.</p>
+<pre><code>
+import requests
+import re
+from app.scraper.scraper import Scraper
+from bs4 import BeautifulSoup
+from app.models import Artist, City, ArtistToCity
+from app.scraper.us_state_abbrev import *
+from app.scraper.scraper import get
+from datetime import datetime
+from app import db
+	
+	
+class Wikipedia(Scraper):
+	def __init__(self):
+		self.name = "Wikipedia Scraper"
+		self.extensions = ["", " (band)", " (rapper)", " (singer)"]
+
+	def run(self):
+		'''
+		This function will run the Wikipedia scraper
+		1. query artists that have not been scraped
+		2. for each artist
+		  a. find the Wikipedia page
+		  b. confirm that the Wikipedia page is relevant
+		  c. collect origin and birthplace data
+		  d. try to find the corresponding city_id for those locations
+		  e. commit artist_to_city relationship and update wikipedia_last_scraped
+		:return: None (but will commit to the Artist.wikipedia_last_scraped)
+		'''
+		# query for artists that haven't been scraped
+		artists = Artist.query.filter(Artist.wikipedia_last_scraped == None)\
+			.order_by(Artist.spotify_popularity.desc()).all()
+
+		for artist in artists:
+			print("wikipedia:", artist)
+			for extension in self.extensions:
+	
+				# get the wikipedia soup, and check if it is of a musician
+				soup = self.get_wikipedia_soup(artist.name + extension)
+				if self.is_page_of_musician(soup):
+	
+					# a good Wikipedia page was found for this artist, scrape origin and birthplace
+					location_dict = self.get_artist_location(soup)
+	
+					if location_dict["origin"] is not None:
+						origin_city_id = self.find_city_id_from_str_list(location_dict["origin"])
+						if origin_city_id is not None:
+							self.commit_artist_to_city(artist.id, origin_city_id, "origin")
+							print(" - origin found.")
+	
+					if location_dict["birthplace"] is not None:
+						birthplace_city_id = self.find_city_id_from_str_list(location_dict["birthplace"])
+						if birthplace_city_id is not None:
+							self.commit_artist_to_city(artist.id, birthplace_city_id, "birthplace")
+							print(" - birthplace found.")
+	
+					break
+	
+			# update wikipedia_last_scraped
+			a = Artist.query.get(artist.id)
+			a.wikipedia_last_scraped = datetime.utcnow()
+			db.session.add(a)
+			db.session.commit()
+	
+	
+	def commit_artist_to_city(self, artist_id, city_id, relationship):
+		'''
+		updates the artist_to_city relationship with the data provided
+		:param artist_id: the id of the artist
+		:param city_id: the id of the city
+		:param relationship: a description of the relationship between artist and city (usually origin or birthplace)
+		:return: None (but commits artist_to_city relationship to db)
+		'''
+		a2c = ArtistToCity(artist_id=artist_id, city_id=city_id, description=relationship, is_confirmed=True)
+		db.session.add(a2c)
+		db.session.commit()
+	
+	def get_wikipedia_soup(self, artist_name):
+		'''
+		takes the name of an artist and returns the soup of the corresponding Wikipedia page
+		This does not necessarily find the page of an artist! Use is_page_of_musician to confirm or deny
+		:param artist_name:
+		:return: soup of wikipedia page
+		'''
+		url = 'https://en.wikipedia.org/wiki/' + artist_name
+		response = requests.get(url)
+		return BeautifulSoup(response.text, "html.parser")
+	
+	def get_artist_location(self, soup):
+		'''
+		gets origin and birthplace from a wikipedia soup
+		:param soup: the soup of a wikipedia page of an artist/musician
+		:return: a dictionary with entries for origin and birthplace
+			Ex: soup for "Moon Taxi" returns
+			{origin: ['Vestavia Hills', 'Alabama', 'United States'],
+			 birthplace: None}
+		'''
+		# Get the wikipedia sidebar
+		sidebars = soup.find_all('tbody')
+		if sidebars is None:
+			return None
+	
+		artist_data = {
+			"origin": None,
+			"birthplace": None
+		}
+	
+		for sb in sidebars:
+			for sibling in sb.tr.next_siblings:
+				# find the <tr> tag that has Origin
+				if repr(sibling)[0:26] == "<tr><th scope=\"row\">Origin":
+					artist_data["origin"] = self.process_origin_list(sibling.find_all(text=True))
+				if repr(sibling)[0:24] == "<tr><th scope=\"row\">Born":
+					artist_data["birthplace"] = self.process_birthplace_list(sibling.findAll(text=True))
+					# TODO break loop when data is found
+	
+		return artist_data
+	
+	def process_origin_list(self, origin_list):
+		'''
+		process_origin_list: used to clean the strings of an artists origin
+		this function is in get_artist_location in order to return a clean list
+		:param origin_list: The raw text list that comes from scraping wikipedia
+		:return: a cleaned up list of strings that describe a location
+		'''
+		new_list = []
+		for el in origin_list:
+			if el == 'Origin':
+				continue
+			if ", " in el:
+				new_el = el.split(", ")
+				for split_str in new_el:
+					if split_str != '' and split_str != ',' and el != ' ':
+						new_list.append(split_str.strip())
+			else:
+				if el != '' and el != ',' and el != ' ' and not el.startswith('['):
+					new_list.append(el.strip())
+		return new_list
+	
+	def process_birthplace_list(self, birthplace_list):
+		'''
+		process_birthplace_list takes the raw text from wikipedias "Born" line and converts it into a list of location
+		used in get_artist_location in order to return a clean list
+		Ex: ['Born', ' (', '1999-05-25', ') ', 'May 25, 1999', 'Chicago', ', U.S.'] becomes ['Chicago', 'U.S.']
+		:param birthplace_list:
+		:return: 1
+		'''
+		new_list = []
+		for el in birthplace_list:
+			if el == "Born":
+				continue
+			if self.is_number_in_string(el):
+				continue
+			if ", " in el:
+				new_el = el.split(", ")
+				for split_str in new_el:
+					if split_str != '' and split_str != ',' and el != ' ' and el != ' (' and el != ') ':
+						new_list.append(split_str.strip())
+			else:
+				if el != '' and el != ',' and el != ' ' and not el.startswith('[') and el != ' (' and el != ') ' and el != '(' and el != ')':
+					new_list.append(el.strip())
+		if not new_list:
+			return None
+		return new_list
+	
+	def is_number_in_string(self, inputString):
+		'''
+		:param inputString: a string
+		:return: True if any char in inputstring is a number
+		'''
+		return any(char.isdigit() for char in inputString)
+
+	def find_city_id_from_str_list(self, location_list):
+		'''
+		takes a list of strings describing a location and finds the city_id that it represents
+		this function will do its best to find a city with limited information
+		:param location_list: A list of strings describing a location (Ex: ['San Francisco', 'California', 'US'])
+		:return: the city_id that the location_list describes (Ex: 851) or None if not found
+		'''
+	
+		if len(location_list) == 1:
+			# try to find city
+			city_query = City.query.filter(City.name == location_list[0])
+			if city_query.count == 1:
+				return city_query.first()
+			else:
+				return None
+	
+		elif len(location_list) == 2:
+			# assume that location_list = [city, state]
+			process_origin = [location_list[0], us_state_abbrev.get(location_list[1], "")]
+			city_query = City.query.filter(City.name == process_origin[0], City.state == process_origin[1])
+			if city_query.count() == 1:
+				return city_query.first().id
+	
+			# assume that origin = [city, country]
+			process_origin = [location_list[0], country_abbrev.get(location_list[1], "")]
+			city_query = City.query.filter(City.name == process_origin[0], City.country == process_origin[1])
+			if city_query.count() == 1:
+				return city_query.first().id
+	
+		elif len(location_list) == 3:
+	
+			# assume that origin = [city, state, country]
+			if len(location_list[1]) == 2:
+				# sometimes the state is already abbreviated and does not need to be changed
+				process_origin = [location_list[0], location_list[1], country_abbrev.get(location_list[2], "")]
+			else:
+				process_origin = [location_list[0], us_state_abbrev.get(location_list[1], ""), country_abbrev.get(location_list[2],"")]
+			city_query = City.query.filter(City.name == process_origin[0], City.state == process_origin[1])
+			if city_query.count() == 1:
+				return city_query.first().id
+	
+			# assume that origin = [city, country]
+			process_origin = [location_list[0], country_abbrev.get(location_list[2], "")]
+			city_query = City.query.filter(City.name == process_origin[0], City.country == process_origin[1])
+			if city_query.count() == 1:
+				return city_query.first().id
+	
+		else:
+			return None
+	
+	def is_page_of_musician(self, soup):
+		'''
+		a heuristic to determine if soup is of a wikipedia page for a musician
+		:param soup: soup of a wikipedia page
+		:return: true if page is of musician, false if not of musician
+		'''
+		result = soup.find(text=[re.compile('discography'), re.compile('Discography'), re.compile('Recordings'), re.compile('Genres')])
+		if result:
+			return True
+		return False
+</code></pre>
+							
+						</div>
+					</div>
+
+				<!-- Header -->
+				<header id="header">
+					<div class="inner">
+
+						<!-- Logo -->
+							<a href="index.html" class="logo">
+								<span class="symbol"><img src="images/favicon_io/android-chrome-512x512.png" alt="" /></span><span class="title">Back Home</span>
+							</a>
+
+					</div>
+				</header>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<section>
+							<h2>Get in touch</h2>
+							<form method="post" action="https://formspree.io/f/mgeppqpz">
+								<div class="fields">
+									<div class="field half">
+										<input type="text" name="name" id="name" placeholder="Name" />
+									</div>
+									<div class="field half">
+										<input type="email" name="email" id="email" placeholder="Email" />
+									</div>
+									<div class="field">
+										<textarea name="text" id="message" placeholder="Message"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send" class="primary" /></li>
+								</ul>
+							</form>
+						</section>
+						<section>
+							<h2>Connect</h2>
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/john-hunter-376343160/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/JohnHHunter" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+								<!-- <li><a href="tel:9733769395" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li> -->
+								<li><a href="mailto: jhunter1@ithaca.edu" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+						</section>
+<!-- 						<ul class="copyright">
+							<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul> -->
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
